@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using SCPL.Application.BusinessInterfaces;
 using SCPL.Core;
@@ -28,7 +28,7 @@ namespace SCPL.Application.BusinessServices
                 LoginStatus = isSuccess,
                 LogDate = DateTime.UtcNow,
                 LoginIp = context.Connection.RemoteIpAddress?.ToString() ?? "UNKNOWN",
-                //BrowserDetails = context.Request.Headers.UserAgent.ToString()
+                BrowserDetails = context.Request.Headers["User-Agent"].ToString()
             };
 
             await _dbContext.HistoryLog_5254.AddAsync(historyLog);

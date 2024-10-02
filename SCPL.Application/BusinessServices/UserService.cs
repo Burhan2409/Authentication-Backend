@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using SCPL.Application.BusinessInterfaces;
 using SCPL.Core;
@@ -20,7 +20,7 @@ namespace SCPL.Application.BusinessServices
             _dbContext = dbContext;
             _loggingService = loggingService;
             _jwtTokenService = jwtTokenService;
-        }
+    }
 
         public UserTable SignUpUser(UserTable user)
         {
