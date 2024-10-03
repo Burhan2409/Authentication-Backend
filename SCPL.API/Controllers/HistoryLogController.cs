@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using SCPL.Application.BusinessInterfaces;
@@ -12,11 +12,10 @@ namespace SCPL.API.Controllers
     {
         private readonly IHistoryLogService _historyLogService;
 
-        public HistoryLogController(IHistoryLogService historyLogService)
-        {
-            _historyLogService = historyLogService;
-        }
-        [Authorize]
+    public HistoryLogController(IHistoryLogService historyLogService)
+    {
+      _historyLogService = historyLogService;
+    }
         [HttpGet("GetLogs")]
         public async Task<IActionResult> GetLogs()
         {
